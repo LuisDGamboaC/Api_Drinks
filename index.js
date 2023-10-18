@@ -64,25 +64,8 @@ app.get("/", async(req, res)=> {
 });
 
 app.post("/name", async(req,res) => {
-  var inputName = req.body.drinkName;
+  res.render("name", );
 
-  try {
-    const response = await axios.post(API_UrL_SEARCH_Name + `${inputName}`);
-    const drinks = response.data.drinks;
-    const formattedDrinks = drinks.map((drink) => ({
-      name: drink.strDrink,
-      category: drink.strCategory,
-      ingredientsN: getIngredients(drink),
-      instructions: drink.strInstructions,
-    }));
-    res.render("name", { drinkName: formattedDrinks });
-
-  } catch (error) {
-    console.error("Failed to make request:", error.message);
-    res.render("index.ejs", {
-      error:"No result.",
-    });
-  }
 });
 
 

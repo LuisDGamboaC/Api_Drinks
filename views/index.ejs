@@ -1,0 +1,59 @@
+
+    <%- include("templates/headers.ejs") %>
+
+    <!-- d-none -->
+
+    <div class="bar">
+    <div id="randomDiv" class="container-fluid col-xl-9 px-1 pb-9"> 
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-6">
+            <img src="https://ae01.alicdn.com/kf/S6a9dd32d4b6b46988093ba127366921eh/Martini-Bar-Bar-Kit-Stainless-Steel-Shaker-Bartender-Mixer-Cocktail-Cube-Mixed-Drinks-Martini-Bar-Party.jpg" class="d-block mx-lg-auto img-fluid rounded-4" alt="bartender" width="500" height="300" loading="lazy">
+          </div>
+          <div class="col-lg-6 hi">
+            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Choose Random Drink</h1>
+            <p class="lead">I'd be happy to help you choose a random drink for you! </p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <form  method="get" id="randomForm">
+                    <button type="submit" class="btn btn-primary btn-lg px-4 me-md-2">Get me a Drink!</button>
+                </form>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bar">
+      <div id="randomResult" class="container-fluid col-xl-9 px-1 py hideDiv ">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-6">
+            <img src="<%= locals.drinkImg %>" class="d-block mx-lg-auto img-fluid rounded-4" alt="bartender" width="500" height="300" loading="lazy">
+          </div>
+          <div class="col-lg-6 hi">
+            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3"><%= locals.drinkName %></h1>
+            <p class="lead"><%= locals.drinkCategory %></p>
+            <p class="lead"><%= locals.drinkAlcoholic %></p>
+            <p class="lead"><%= locals.drinkInstructions %></p>
+            <ul>
+              <% for (let ingredient of ingredients1) { %>
+                <li><%= ingredient %></li>
+              <% } %>
+            </ul>
+            <p class="lead">Measures</p>
+            <ul>
+              <% for(let measure of measure1) { %>
+              <li><%= measure %></li>
+              <% } %>
+            </ul>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <form  method="get" id="randomForm">
+                    <button type="submit" class="btn btn-primary btn-lg px-4 me-md-2">Return</button>
+                </form>           
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <%- include("templates/footer.ejs") %>

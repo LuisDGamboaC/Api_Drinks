@@ -1,0 +1,77 @@
+html * {
+    font-family: 'Quicksand', sans-serif;
+}
+body {
+  background-color: #FFBB5C;
+}
+.bar {
+  background-color: #FFBB5C;
+
+}
+/* .title {
+    
+} */
+.hideDiv {
+    display: none;
+}
+#page-container {
+  position: relative;
+  @media (min-width: 1920px) {
+    min-height: 35.5vh;
+
+  }
+}
+
+.pt {
+  padding-top: 20rem;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+  
+}
+
+
+.flx {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+  margin-bottom: -1rem;
+}
+
+.foot {
+        --s: 200px; /* control the size */
+        --c1: #FF9B50;
+        --c2: #E25E3E;
+        --c3: #C63D2F;
+        
+        background:
+          repeating-conic-gradient(from 30deg,#0000 0 120deg,var(--c3) 0 180deg) 
+           calc(.5*var(--s)) calc(.5*var(--s)*0.577),
+          repeating-conic-gradient(from 30deg,var(--c1) 0 60deg,var(--c2) 0 120deg,var(--c3) 0 180deg);
+        background-size: var(--s) calc(var(--s)*0.577);
+
+        @media (min-width: 1920px){
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1030;
+          }
+
+}
+
+.head {
+    --s: 200px; /* control the size */
+    --c1: #FF9B50;
+    --c2: #E25E3E;
+    --c3: #C63D2F;
+    
+    background:
+      repeating-conic-gradient(from 30deg,#0000 0 120deg,var(--c3) 0 180deg) 
+       calc(.5*var(--s)) calc(.5*var(--s)*0.577),
+      repeating-conic-gradient(from 30deg,var(--c1) 0 60deg,var(--c2) 0 120deg,var(--c3) 0 180deg);
+    background-size: var(--s) calc(var(--s)*0.577);
+}
+/* FORM STYLE */

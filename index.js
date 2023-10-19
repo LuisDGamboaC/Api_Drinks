@@ -4,26 +4,11 @@ import bodyParser from "body-parser";
 
 const app = express();
 const port = 3000;
-const API_UrL_SEARCH_Name = "www.thecocktaildb.com/api/json/v1/1/search.php?s="; //'margarita'
 const API_URL_Random = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
-const API_URL_Ingredients = "www.thecocktaildb.com/api/json/v1/1/filter.php?i=";
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-function getIngredients(drink) {
-  const ingredients2 = [];
-  for (let i = 1; i <= 15; i++) {
-    const ingredientNm = drink[`strIngredient${i}`];
-    const measureNm = drink[`strMeasure${i}`];
-    if (ingredientNm && measureNm) {
-      ingredients2.push(`${measureNm} ${ingredientNm}`);
-    }
-  }
-  return ingredients2;
-}
-
-app.use(getIngredients);
 
 app.get("/", async(req, res)=> {
 
@@ -60,14 +45,12 @@ app.get("/", async(req, res)=> {
                 res.render("index.ejs", {
                   error:"No result.",
                 });
-            }
+  }
 });
 
-app.post("/name", async(req,res) => {
-  res.render("name", );
-
-});
-
+app.get("/name", (req,res) => {
+  res.render("name.ejs")
+})
 
 app.listen(port, () => {
     console.log(`Server running on port: ${port}`);
